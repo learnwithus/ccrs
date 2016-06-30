@@ -1,0 +1,36 @@
+<ion-view view-title="CCRS">
+  <ion-content>
+    <div class="content-item">
+      <div class="content-row">
+        <h3>Course Search</h3>
+        <i ng-click="openModal()" class="icon ion-gear-b icon-accessory"></i>
+      </div>
+      <form ng-submit="findCourses(course_title)">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" ng-model="course_title" placeholder="ENTER COURSE NAME">
+          </label>
+          <button type="submit" class="button button-small">
+            <i class="icon ion-android-search icon-accessory"></i>
+          </button>
+        </div>
+      </form>
+      <ion-list>
+        <ion-item class="item" ng-repeat="course in courses" type="item-text-wrap">
+          <h2>{{course.Title}}</h2>
+          <p>{{course.Organization}} ({{course.CourseType}})</p>
+          <p class="paragraph-course-detail">
+            <a class="btn-detail" href="#/tab/courses/{{course.CourseID}}">
+              <i class="icon ion-plus-circled icon-accessory"></i> Course Detail
+            </a>
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="footer-light">
+      <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
+      <h6>All Rights Reserved</h6>
+    </div>
+  </ion-content>
+</ion-view>

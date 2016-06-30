@@ -1,0 +1,20 @@
+<ion-view view-title="CCRS">
+  <ion-content class="padding">
+    <h3>My Registered Courses</h3>
+    <ion-list>
+      <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" type="item-text-wrap">
+        <p><strong>Title</strong>: {{session.Title}}</p>
+        <p><strong>Date</strong>: {{session.startDate}}</p>
+        <p><strong>Time</strong>: {{session.startTime}}</p>
+        <p><strong>Location</strong>: {{session.Location}}</p>
+
+        <p class="paragraph-session-detail">
+          <a class="btn-detail-session" href="#/tab/courses/{{session.CourseID}}" ng-click="log(session.CourseID)">
+            COURSE DETAILS
+          </a>
+        </p>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

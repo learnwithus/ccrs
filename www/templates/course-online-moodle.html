@@ -1,0 +1,17 @@
+<ion-view view-title="CCRS">
+	<!--
+    <ion-content overflow-scroll="true">
+        <iframe src="{{moodle_url | trusted}}"></iframe>
+    </ion-content>
+    -->
+    <ion-content>
+    	<div id="div-spinner" ng-hide="loaded">
+	    	<ion-spinner icon="ripple"></ion-spinner>
+	    	<p> Loading course </p>
+    	</div>
+
+    	<a class="btn-detail-small" href="#/tab/courses" ng-show="loaded">
+      		Back to course search
+    	</a>
+    </ion-content>
+</ion-view>

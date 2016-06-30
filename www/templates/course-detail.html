@@ -1,0 +1,42 @@
+
+<ion-view view-title="CCRS">
+  <ion-content>
+    <div class="content-item-opaque">
+      <h3>Course Details</h3>
+      <h5 class="sub-heading"><strong>Course Name</strong></h5>
+      <p>{{course.Title}}</p>
+      <h5 class="sub-heading"><strong>Category</strong></h5>
+      <p>{{course.CourseType}}</p>
+      <h5 class="sub-heading" style="margin-bottom: 0px;"><strong>Description</strong></h5>
+    </div>
+    <div class="content-item-blue">
+      <p>{{course.Description}}</p>
+    </div>
+    <div class="content-item-opaque">
+      <h5 class="sub-heading"><strong>Course Length</strong></h5>
+      <p>{{course.CourseLength}} hours</p>
+    </div>
+    <!--
+    <a class="btn-detail-large" href="#/tab/courses/{{course.CourseID}}/sessions" ng-click="viewSessions()">
+    -->
+    <a class="btn-detail-large" ng-if="!online" href="#/tab/courses/2664/sessions" ng-click="viewSessions()">
+      <i class="icon ion-android-time icon-accessory"></i>
+      <div id="view-session">
+        View Sessions
+        <div id="register">+ Register</div>
+      </div>
+    </a>
+
+    <!--
+    <a class="btn-detail-small" ng-if="online" href="#/tab/courses/{{course.CourseID}}/online">
+    -->
+    <a class="btn-detail-small" ng-if="online" ng-click="showConfirm()">
+      <i class="icon ion-key icon-accessory"></i> Enrol in this course
+    </a>
+
+    <div class="footer-light">
+      <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
+      <h6>All Rights Reserved</h6>
+    </div>
+  </ion-content>
+</ion-view>

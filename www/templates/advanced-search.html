@@ -1,0 +1,21 @@
+<ion-modal-view>
+	<ion-header-bar>
+	  <h1 class="title text-white">CCRS</h1>
+	</ion-header-bar>
+	<ion-content class="modal-content">
+	  <h3 class="text-white"> Advanced Search </h3>
+	  <div class="close-modal" ng-click="closeModal()">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+      <ion-list>
+      	<ion-item class="modal-list-item" ng-repeat="checkbox_org in search_preference.Organization">
+      	  <ion-checkbox ng-model="checkbox_org.value">{{checkbox_org.name}}</ion-checkbox>
+      	</ion-item>
+      	<ion-item class="modal-list-item" ng-repeat="checkbox_type in search_preference.CourseType">
+      	  <ion-checkbox ng-model="checkbox_type.value">{{checkbox_type.name}}</ion-checkbox>
+      	</ion-item>
+      </ion-list>
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="CCRS">
+  <ion-content class="padding">
+    <h3>My Training History</h3>
+    <ion-list>
+      <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)" type="item-text-wrap">
+        <p><strong>Title</strong>: {{course.Title}}</p>
+        <p><strong>Organization</strong>: {{course.Organization}}</p>
+        <p><strong>Result</strong>: {{course.Result}}</p>
+        <p><strong>Date Completed</strong>: {{course.DateCompleted}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

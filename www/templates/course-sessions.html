@@ -1,0 +1,32 @@
+
+<ion-view view-title="CCRS">
+  <ion-content>
+    <div class="content-item">
+      <div class="content-row">
+        <h3>Register</h3>
+      </div>
+      <div class="content-row">
+        <h5 class="sub-heading"><strong>Course Name</strong></h5>
+        <p>{{course.Title}}</p>
+      </div>
+      <ion-list>
+        <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" type="item-text-wrap">
+          <p><strong>Date</strong>: {{session.startDate}}</p>
+          <p><strong>Time</strong>: {{session.startTime}}</p>
+          <p><strong>Location</strong></p>
+          <p>{{session.Location}}</p>
+          <p class="paragraph-session-detail">
+            <a class="btn-detail-session" href="#/tab/courses">
+              <i class="icon ion-key icon-accessory"></i> Register for this session
+            </a>
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="footer-light">
+      <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
+      <h6>All Rights Reserved</h6>
+    </div>
+  </ion-content>
+</ion-view>
