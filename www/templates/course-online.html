@@ -1,31 +1,29 @@
 
 <ion-view view-title="CCRS">
   <ion-content>
+    <h3>You have been registered!</h3>
     <div class="content-item-opaque">
-      <h3>You have been registered!</h3>
-      <h5 class="sub-heading"><strong>Course Name</strong></h5>
+      <h5 class="sub-heading" style="margin-top: 0;"><strong>Course Name</strong></h5>
       <p>{{course.Title}}</p>
       <h5 class="sub-heading"><strong>Category</strong></h5>
       <p>{{course.CourseType}}</p>
-      <h5 class="sub-heading" style="margin-bottom: 0px;"><strong>Description</strong></h5>
-    </div>
-    <div class="content-item-blue">
-      <p>{{course.Description}}</p>
+      <h5 class="sub-heading" style="margin-bottom: 5px;"><strong>Description</strong></h5>
+      <div class="content-item-blue">
+        <p>{{course.Description}}</p>
+      </div>
     </div>
     <div class="content-item-opaque">
       <h5 class="sub-heading"><strong>Course Length</strong></h5>
       <p>{{course.CourseLength}} hours</p>
     </div>
 
-    <!--
+
     <a class="btn-detail-small" href="#/tab/courses/{{course.CourseID}}/online/{{moodle_url}}">
-    -->
-    <a class="btn-detail-small" href="#/tab/courses/{{course.CourseID}}/online/2">
       <i class="icon ion-ios-book-outline icon-accessory"></i> Start Course
     </a>
 
     <a class="btn-detail-small" href="#/tab/courses">
-      Finish
+      Back to home
     </a>
 
     <div class="footer-light">

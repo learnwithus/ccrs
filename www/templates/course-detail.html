@@ -1,25 +1,34 @@
 
-<ion-view view-title="CCRS">
+<ion-view>
+  <ion-nav-bar>
+    <ion-nav-title ng-click="home()">
+      CCRS
+    </ion-nav-title>
+    <ion-nav-back-button class="button back-button buttons header-item" ng-click="back()">
+      <i class="icon ion-ios-arrow-back"></i>
+      Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content>
+    <h3>Course Details</h3>
     <div class="content-item-opaque">
-      <h3>Course Details</h3>
-      <h5 class="sub-heading"><strong>Course Name</strong></h5>
-      <p>{{course.Title}}</p>
-      <h5 class="sub-heading"><strong>Category</strong></h5>
-      <p>{{course.CourseType}}</p>
-      <h5 class="sub-heading" style="margin-bottom: 0px;"><strong>Description</strong></h5>
-    </div>
-    <div class="content-item-blue">
-      <p>{{course.Description}}</p>
+      <h5 class="sub-heading" style="margin-top: 0;">Course Name</h5>
+      <p><span>{{course.Title}}</span></p>
+      <h5 class="sub-heading">Category</h5>
+      <p><span>{{course.CourseType}}</span></p>
+      <h5 class="sub-heading" style="margin-bottom: 5px;">Description</h5>
+      <div class="content-item-blue">
+        <p><span>{{course.Description}}</span></p>
+      </div>
     </div>
     <div class="content-item-opaque">
-      <h5 class="sub-heading"><strong>Course Length</strong></h5>
-      <p>{{course.CourseLength}} hours</p>
+      <h5 class="sub-heading">Course Length</h5>
+      <p><span>{{course.CourseLength}} hours</span></p>
     </div>
     <!--
     <a class="btn-detail-large" href="#/tab/courses/{{course.CourseID}}/sessions" ng-click="viewSessions()">
     -->
-    <a class="btn-detail-large" ng-if="!online" href="#/tab/courses/2664/sessions" ng-click="viewSessions()">
+    <a class="btn-detail-large" ng-if="!online" href="#/tab/courses/{{course.CourseID}}/sessions" ng-click="viewSessions()">
       <i class="icon ion-android-time icon-accessory"></i>
       <div id="view-session">
         View Sessions
@@ -30,8 +39,12 @@
     <!--
     <a class="btn-detail-small" ng-if="online" href="#/tab/courses/{{course.CourseID}}/online">
     -->
-    <a class="btn-detail-small" ng-if="online" ng-click="showConfirm()">
+    <a class="btn-detail-small" ng-if="online && !userEnrolled" ng-click="showConfirm()">
       <i class="icon ion-key icon-accessory"></i> Enrol in this course
+    </a>
+
+    <a class="btn-detail-small" ng-if="online && userEnrolled" ng-click="startOnlineCourse()">
+      <i class="icon ion-key icon-accessory"></i> Start Course
     </a>
 
     <div class="footer-light">

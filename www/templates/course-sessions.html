@@ -7,18 +7,21 @@
       </div>
       <div class="content-row">
         <h5 class="sub-heading"><strong>Course Name</strong></h5>
-        <p>{{course.Title}}</p>
+        <p>{{course}}</p>
       </div>
       <ion-list>
-        <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" type="item-text-wrap">
+        <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
           <p><strong>Date</strong>: {{session.startDate}}</p>
           <p><strong>Time</strong>: {{session.startTime}}</p>
           <p><strong>Location</strong></p>
           <p>{{session.Location}}</p>
-          <p class="paragraph-session-detail">
-            <a class="btn-detail-session" href="#/tab/courses">
+          <p ng-if="!session.userEnrolled" class="paragraph-session-detail">
+            <a class="btn-detail-session" ng-click="showConfirm(session)">
               <i class="icon ion-key icon-accessory"></i> Register for this session
             </a>
+          </p>
+          <p ng-if="session.userEnrolled">
+            You are enrolled in this session.
           </p>
         </ion-item>
       </ion-list>

@@ -21,7 +21,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceSe
       StatusBar.styleDefault();
     }
   });
-  $rootScope.CCRS_URL = "https://webedpm.com/~nomonke1/park/";
+  $rootScope.CCRS_URL = "https://learndev.vch.ca/m2/vch_custom/ccrsapp/";
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -70,6 +70,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceSe
         'tab-dash': {
           templateUrl: 'templates/registered.html',
           controller: 'RegisteredCtrl'
+        }
+      }
+    })
+    .state('tab.profile', {
+      url: '/dash/profile',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
         }
       }
     })

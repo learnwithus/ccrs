@@ -1,5 +1,11 @@
+/*
+ * =====================================================================================================================
+ * CSS
+ * =====================================================================================================================
+ */
 h3 {
 	text-align: center;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 ion-nav-bar.bar-stable {
@@ -10,12 +16,28 @@ ion-nav-bar.bar-stable {
   color: #fff;
 }
 
+ion-content {
+  padding: 0 5px 20px 5px;
+  background-color: #dbf0f8;
+}
+
+body {
+  font-family: "Segoe UI regular", sans-serif;
+}
+
+button.back-button.buttons.button.back-button.buttons.header-item {
+  font-size: 17px;
+}
+
+/*
+ * =====================================================================================================================
+ * /login CSS
+ * =====================================================================================================================
+ */
 #login-header {
   background-color: #006fa0;
   padding: 24px 5px 10px 5px;
-  margin-left: -5px;
-  margin-right: -5px;
-  margin-bottom: 5px;
+  margin: 0 -5px 5px -5px;
 }
 
 #login-header h1,
@@ -35,11 +57,6 @@ ion-nav-bar.bar-stable {
   margin-bottom: 24px;
 }
 
-ion-content {
-	padding: 0px 5px 20px 5px;
-	background-color: #dbf0f8;
-}
-
 ion-content.modal-content {
 	padding: 10px 5px 20px 5px;
 	background-color: #00374B;
@@ -48,34 +65,35 @@ ion-content.modal-content {
 div.item-input-inset {
 	border: none;
 	background: transparent;
-	padding-right: 0px;
-	padding-left: 0px;
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .item-input-wrapper {
 	border: none;
 	background: transparent;
 	border-bottom: 1px solid #006fa0;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 	outline: none;
 }
 
 .bar.bar-stable.bar-header {
-    background-color: #006fa0;
+  background-color: #006fa0;
 }
 
 .title.title-center.header-item {
-	color: white;
+	color: #fff;
+  font-family: "Times New Roman", serif;
 }
 
 i.icon.ion-android-search.icon-accessory {
-	color: white;
+	color: #fff;
 }
 
 button.button.button-small {
 	background-color: #006fa0;
-	border-radius: 0px;
+	border-radius: 0;
 	width: 35px;
 	height: 35px;
 	padding: 0;
@@ -84,8 +102,12 @@ label.item-input-wrapper {
 	height: 35px;
 }
 
+label.item-input-wrapper input {
+  font-family: "Segoe UI light", sans-serif;
+}
+
 div.content-item {
-	padding: 5px 3px 0px 3px;
+	padding: 5px 3px 0 3px;
 }
 
 ion-item.item {
@@ -115,8 +137,8 @@ a.btn-detail,
 button.btn-detail {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0px;
-  color: #ffffff;
+  border-radius: 0;
+  color: #fff;
   font-size: 20px;
   background: #006fa0;
   text-decoration: none;
@@ -124,13 +146,14 @@ button.btn-detail {
   text-align: center;
   vertical-align: middle;
   display:table-cell;
-  padding: 5px 0px 7px 0px;
+  padding: 5px 0 7px 0;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 a.btn-detail-session {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0px;
+  border-radius: 0;
   color: #ffffff;
   font-size: 16px;
   background: #006fa0;
@@ -139,7 +162,25 @@ a.btn-detail-session {
   text-align: center;
   vertical-align: middle;
   display:table-cell;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0 5px 0;
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+a.btn-detail-session-small {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-top: -3px;
+  color: #fff;
+  font-size: 10px;
+  background: #006fa0;
+  text-decoration: none;
+  width: 35%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1px 2px 1px 2px;
+  float: right;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 a.btn-detail:hover,
@@ -170,6 +211,7 @@ a .icon-ion-key.icon-accessory {
 
 h5.sub-heading {
 	text-align: left;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 i.ion-ios-arrow-back {
@@ -182,10 +224,18 @@ span.back-text {
 div.content-item-opaque {
 	background: rgba(255, 255, 255, 0.5);
 	padding: 10px 5px 3px 5px;
+  font-family: "Segoe UI light", sans-serif;
 }
+
+div.content-item-opaque a {
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
 div.content-item-blue {
 	background: rgba(152, 201, 222, 0.6);
 	padding: 10px 5px 10px 5px;
+  font-family: "Segoe UI light", sans-serif;
+
 }
 
 ion-header-bar.bar.bar-header {
@@ -225,7 +275,7 @@ ion-header-bar.bar.bar-header {
 }
 
 .text-white {
-	color: white;
+	color: #fff;
 }
 
 i.icon.ion-gear-b.icon-accessory {
@@ -242,7 +292,8 @@ i.icon.ion-android-time.icon-accessory {
 }
 
 i.icon.ion-ios-bookmarks-outline.icon-accessory,
-i.icon.ion-ios-paper-outline.icon-accessory {
+i.icon.ion-ios-paper-outline.icon-accessory,
+i.icon.ion-person {
   float: left;
   font-size: 32px;
 }
@@ -257,13 +308,11 @@ i.icon.ion-ios-paper-outline.icon-accessory {
 
 a.btn-detail-large {
   position: relative;
-  margin: 0 auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px auto;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0px;
-  color: #ffffff;
+  border-radius: 0;
+  color: #fff;
   font-size: 20px;
   background: #006fa0;
   padding: 10px 10px 10px 10px;
@@ -272,6 +321,7 @@ a.btn-detail-large {
   text-align: center;
   display: block;
   height: 60px;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 a.btn-detail-large.btn-full-width {
@@ -292,12 +342,10 @@ a.btn-detail-large.btn-full-width p {
 
 a.btn-detail-small {
   position: relative;
-  margin: 0 auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px auto;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0px;
+  border-radius: 0;
   color: #ffffff;
   font-size: 16px;
   background: #006fa0;
@@ -306,6 +354,7 @@ a.btn-detail-small {
   width: 200px;
   text-align: center;
   display: block;
+  font-family: "Segoe UI semibold", sans-serif;
 }
 
 div.footer-light h6 {
@@ -323,6 +372,25 @@ div.footer-light {
 
 .item-text-wrap p {
 	color: black;
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+div.content-item > ion-list > div > ion-item h2,
+div.content-item > ion-list > div > ion-item a {
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+div.content-item > ion-list > div > ion-item > p {
+  font-family: "Segoe UI light", sans-serif;
+  color: #000;
+}
+
+.button.back-button.buttons.header-item {
+  color: #fff;
+}
+
+.item-text-wrap p span {
+  font-family: "Segoe UI light", sans-serif;
 }
 
 .popup-container.popup-showing.active div.popup {
@@ -348,3 +416,21 @@ div.footer-light {
   margin-top: 75px;
 }
 
+.button.back-button.buttons.header-item,
+.button.back-button.buttons.header-item:focus{
+  background-color: #006fa0;
+  border: none;
+}
+
+ion-content ion-list > div > ion-item .paragraph-account {
+  font-size: 18px;
+  color: #333;
+  font-family: "Segoe UI semibold", sans-serif;
+}
+ion-content ion-list > div > ion-item a {
+  text-decoration: none;
+}
+
+span.tab-title {
+  font-family: "Segoe UI semibold", sans-serif;
+}
