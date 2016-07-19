@@ -1,0 +1,26 @@
+<ion-view>
+  <ion-content class="padding">
+    <h3>My Registered Sessions</h3>
+    <ion-list>
+      <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
+        <p>Course Title</p>
+        <p><span>{{session.Title}}</span></p>
+        <p>Start Date: <span>{{session.startDate}}</span></p>
+        <p>
+          Time: <span>{{session.startTime}}</span>
+          <a class="btn-detail-session-small" href="#/tab/courses/{{session.CourseId}}" >
+            <strong>COURSE DETAILS</strong>
+          </a>
+        </p>
+        <!--
+        <p><strong>Location</strong></p>
+        <p>{{session.Location}}</p>
+        -->
+        <!--
+        <p class="paragraph-session-detail">
+        -->
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

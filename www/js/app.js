@@ -1,12 +1,9 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceService'])
+angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', 'ccrs.filter', 'ccrs.localStorage'])
 
+/**
+ * Default Ionic configuration created with the 'ionic startapp' command
+ */
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -24,15 +21,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceSe
   $rootScope.CCRS_URL = "https://learndev.vch.ca/m2/vch_custom/ccrsapp/";
 })
 
+/**
+ * States (routes) configuration for the app, with a template and controller for each route
+ */
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
   .state('tab', {
     url: '/tab',
     abstract: true,
@@ -70,6 +65,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceSe
         'tab-dash': {
           templateUrl: 'templates/registered.html',
           controller: 'RegisteredCtrl'
+        }
+      }
+    })
+    .state('tab.registered-sessions', {
+      url: '/dash/registered-sessions',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/registered-sessions.html',
+          controller: 'RegisteredSessionsCtrl'
         }
       }
     })
@@ -145,37 +149,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.preferenceSe
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
-
-})
-
-.filter('trusted', ['$sce', function ($sce) {
-    return function(url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-}])
-
-.factory('Localstorage', ['$window', function($window) {
-  return {
-    set: function(key, value) {
-      $window.localStorage[key] = value;
-    },
-    get: function(key, defaultValue) {
-      return $window.localStorage[key] || false;
-    },
-    setObject: function(key, value) {
-      $window.localStorage[key] = JSON.stringify(value);
-    },
-    getObject: function(key) {
-      if($window.localStorage[key] != undefined)
-        return JSON.parse($window.localStorage[key] || false );
-
-      return false;
-    },
-    remove: function(key){
-      $window.localStorage.removeItem(key);
-    },
-    clear: function(){
-      $window.localStorage.clear();
-    }
-  }
-}]);
+});

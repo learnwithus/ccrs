@@ -1,34 +1,24 @@
 <ion-view>
-  <ion-nav-bar>
-    <ion-nav-title>
-      CCRS
-    </ion-nav-title>
-    <ion-nav-back-button class="button back-button buttons header-item" ng-click="back()">
-      <i class="icon ion-ios-arrow-back"></i>
-      <span class="back-text" style="transform: translate3d(0px, 0px, 0px);">
-        <span class="previous-title"></span>
-      </span>
-    </ion-nav-back-button>
-  </ion-nav-bar>
   <ion-content class="padding">
     <h3>My Registered Courses</h3>
     <ion-list>
-      <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
+      <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)" >
         <p>Course Title</p>
-        <p><span>{{session.Title}}</span></p>
-        <p>Course Date: <span>{{session.startDate}}</span></p>
+        <p><span>{{course.Title}}</span></p>
+        <p>Date Registered</p>
         <p>
-          Time: <span>{{session.startTime}}</span>
-          <a class="btn-detail-session-small" href="#/tab/courses/{{session.CourseId}}" >
+          <!--Time: <span>{{course.startTime}}</span>-->
+          <span>{{course.startDate}}</span>
+          <a class="btn-detail-session-small" href="#/tab/courses/{{course.CourseId}}" >
             <strong>COURSE DETAILS</strong>
           </a>
         </p>
         <!--
-        <p><strong>Location</strong></p>
-        <p>{{session.Location}}</p>
+        <p><strong>Course URL</strong></p>
+        <p>{{course.Location}}</p>
         -->
         <!--
-        <p class="paragraph-session-detail">
+        <p class="paragraph-course-detail">
         -->
 
       </ion-item>

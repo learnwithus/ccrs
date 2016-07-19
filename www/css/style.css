@@ -82,7 +82,8 @@ div.item-input-inset {
   background-color: #006fa0;
 }
 
-.title.title-center.header-item {
+.title.title-center.header-item,
+ion-header-bar .title {
 	color: #fff;
   font-family: "Times New Roman", serif;
 }
@@ -215,11 +216,15 @@ h5.sub-heading {
 }
 
 i.ion-ios-arrow-back {
-	color: white;
+	color: #fff;
+  font-size: 32px;
 }
+
 span.back-text {
 	color: white;
 }
+
+
 
 div.content-item-opaque {
 	background: rgba(255, 255, 255, 0.5);
@@ -227,8 +232,13 @@ div.content-item-opaque {
   font-family: "Segoe UI light", sans-serif;
 }
 
-div.content-item-opaque a {
+div.content-item-opaque a,
+div.content-item-opaque p {
   font-family: "Segoe UI semibold", sans-serif;
+}
+
+div.content-item-opaque p span {
+  font-family: "Segoe UI light", sans-serif;
 }
 
 div.content-item-blue {
@@ -293,7 +303,8 @@ i.icon.ion-android-time.icon-accessory {
 
 i.icon.ion-ios-bookmarks-outline.icon-accessory,
 i.icon.ion-ios-paper-outline.icon-accessory,
-i.icon.ion-person {
+i.icon.ion-person,
+i.icon.ion-laptop {
   float: left;
   font-size: 32px;
 }
@@ -346,7 +357,7 @@ a.btn-detail-small {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
   background: #006fa0;
   padding: 5px 5px 5px 5px;
@@ -357,27 +368,36 @@ a.btn-detail-small {
   font-family: "Segoe UI semibold", sans-serif;
 }
 
-div.footer-light h6 {
+.footer-light h6 {
 	font-size: 9px;
 	color: #7198A8;
 	text-align: center;
-	margin-bottom: 0px;
-	margin-top: 0px;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
-div.footer-light {
-	margin-top: 5px;
-	padding-bottom: 5px;
+.footer-light {
+  margin: 10px auto;
 }
 
-.item-text-wrap p {
-	color: black;
+ion-footer-bar.bar.bar-footer.has-tabs {
+  background: #dbf0f8;
+  border: 0;
+}
+
+.modal-content h3.text-white,
+.modal-content .item-checkbox {
   font-family: "Segoe UI semibold", sans-serif;
 }
 
 div.content-item > ion-list > div > ion-item h2,
 div.content-item > ion-list > div > ion-item a {
   font-family: "Segoe UI semibold", sans-serif;
+}
+
+.item-text-wrap p {
+  font-family: "Segoe UI semibold", sans-serif;
+  color: #000;
 }
 
 div.content-item > ion-list > div > ion-item > p {

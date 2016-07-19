@@ -1,7 +1,6 @@
-angular.module('starter.preferenceService', [])
+angular.module('ccrs.preferenceService', [])
     .service('Preferences', function () {
         var pref = {};
-
         return {
             getPreference: function () {
                 return pref;

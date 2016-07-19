@@ -1,14 +1,11 @@
-
 <ion-view>
+  <!--
   <ion-nav-bar>
-    <ion-nav-title ng-click="home()">
-      CCRS
-    </ion-nav-title>
-    <ion-nav-back-button class="button back-button buttons header-item" ng-click="back()">
-      <i class="icon ion-ios-arrow-back"></i>
-      Back
+    <ion-nav-back-button ng-click="back()">
+      <i class="ion-ios-arrow-back"></i>
     </ion-nav-back-button>
   </ion-nav-bar>
+  -->
   <ion-content>
     <h3>Course Details</h3>
     <div class="content-item-opaque">
@@ -25,9 +22,7 @@
       <h5 class="sub-heading">Course Length</h5>
       <p><span>{{course.CourseLength}} hours</span></p>
     </div>
-    <!--
-    <a class="btn-detail-large" href="#/tab/courses/{{course.CourseID}}/sessions" ng-click="viewSessions()">
-    -->
+
     <a class="btn-detail-large" ng-if="!online" href="#/tab/courses/{{course.CourseID}}/sessions" ng-click="viewSessions()">
       <i class="icon ion-android-time icon-accessory"></i>
       <div id="view-session">
@@ -36,9 +31,6 @@
       </div>
     </a>
 
-    <!--
-    <a class="btn-detail-small" ng-if="online" href="#/tab/courses/{{course.CourseID}}/online">
-    -->
     <a class="btn-detail-small" ng-if="online && !userEnrolled" ng-click="showConfirm()">
       <i class="icon ion-key icon-accessory"></i> Enrol in this course
     </a>
