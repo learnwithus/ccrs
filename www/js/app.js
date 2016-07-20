@@ -26,6 +26,9 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
  */
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
+  $ionicConfigProvider.backButton.previousTitleText(false);
+  $ionicConfigProvider.backButton.text('Back');
+
   $stateProvider
 
   .state('tab', {
@@ -52,6 +55,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
   })
     .state('tab.training', {
       url: '/dash/training',
+      cache: false,
       views: {
         'tab-dash': {
           templateUrl: 'templates/training.html',
@@ -61,6 +65,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
     })
     .state('tab.registered', {
       url: '/dash/registered',
+      cache: false,
       views: {
         'tab-dash': {
           templateUrl: 'templates/registered.html',
@@ -70,6 +75,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
     })
     .state('tab.registered-sessions', {
       url: '/dash/registered-sessions',
+      cache: false,
       views: {
         'tab-dash': {
           templateUrl: 'templates/registered-sessions.html',
@@ -79,6 +85,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
     })
     .state('tab.profile', {
       url: '/dash/profile',
+      cache: false,
       views: {
         'tab-dash': {
           templateUrl: 'templates/profile.html',
@@ -98,6 +105,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
     })
     .state('tab.course-detail', {
       url: '/courses/{CourseID}',
+      cache: false,
       views: {
         'tab-courses': {
           templateUrl: 'templates/course-detail.html',

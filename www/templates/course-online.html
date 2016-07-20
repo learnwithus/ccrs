@@ -4,19 +4,18 @@
     <h3>You have been registered!</h3>
     <div class="content-item-opaque">
       <h5 class="sub-heading" style="margin-top: 0;"><strong>Course Name</strong></h5>
-      <p>{{course.Title}}</p>
+      <p><span>{{course.Title}}</span></p>
       <h5 class="sub-heading"><strong>Category</strong></h5>
-      <p>{{course.CourseType}}</p>
+      <p><span>{{course.CourseType}}</span></p>
       <h5 class="sub-heading" style="margin-bottom: 5px;"><strong>Description</strong></h5>
       <div class="content-item-blue">
-        <p>{{course.Description}}</p>
+        <p><span>{{course.Description}}</span></p>
       </div>
     </div>
     <div class="content-item-opaque">
       <h5 class="sub-heading"><strong>Course Length</strong></h5>
-      <p>{{course.CourseLength}} hours</p>
+      <p><span>{{course.CourseLength}} hours</span></p>
     </div>
-
 
     <a class="btn-detail-small" href="#/tab/courses/{{course.CourseID}}/online/{{moodle_url}}">
       <i class="icon ion-ios-book-outline icon-accessory"></i> Start Course

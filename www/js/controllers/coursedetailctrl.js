@@ -101,9 +101,7 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
     viewData.enableBack = true;
   });
 
-  $scope.back = function() {
+  $rootScope.$ionicGoBack = function() {
     $state.go('tab.courses');
-    $ionicHistory.clearHistory();
-    $ionicHistory.clearCache();
   };
 });

@@ -84,4 +84,7 @@ angular.module('ccrs.controllers.sessionsctrl', [])
       }
     });
   };
-})
+  $rootScope.$ionicGoBack = function() {
+    $ionicHistory.goBack();
+  };
+});

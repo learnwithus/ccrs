@@ -1,22 +1,12 @@
 angular.module('ccrs.controllers.coursesctrl', [])
-.controller('CoursesCtrl', function($scope, $http, $state, $ionicModal, $rootScope, $ionicLoading) {
+.controller('CoursesCtrl', function($scope, $http, $state, $ionicModal, $rootScope, $ionicLoading, $ionicHistory) {
   $scope.courses = [];
   $scope.date;
+  $scope.clear = true;
 
-  /*
-   var showLoader = function() {
-   $ionicLoading.show({
-   template: 'Loading Courses'
-   }).then(function(){
-   console.log("The loading indicator is now displayed");
-   });
-   };
-   var hideLoader = function(){
-   $ionicLoading.hide().then(function(){
-   console.log("The loading indicator is now hidden");
-   });
-   };
-   */
+  $scope.setCache = function() {
+    $scope.clear = false;
+  };
 
   $scope.search_preference = {
     "Organization": [
@@ -92,10 +82,16 @@ angular.module('ccrs.controllers.coursesctrl', [])
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
   });
-  $scope.$on('modal.hidden', function() {
-    // Execute action
+
+  // Never show back button
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    viewData.enableBack = false;
+    $scope.clear = true;
   });
-  $scope.$on('modal.removed', function() {
-    // Execute action
+  
+  $scope.$on('$ionicView.afterLeave', function() {
+    if ($scope.clear) {
+      $ionicHistory.clearCache();
+    }
   });
 });

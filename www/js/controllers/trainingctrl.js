@@ -22,4 +22,7 @@ angular.module('ccrs.controllers.trainingctrl', [])
         return "item item-text-wrap";
       }
     };
-  });
+    $rootScope.$ionicGoBack = function() {
+      $state.go('tab.dash');
+    };
+});

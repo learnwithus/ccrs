@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.registeredctrl', [])
-  .controller('RegisteredCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope) {
+  .controller('RegisteredCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope, $ionicHistory) {
     var course_url = $rootScope.CCRS_URL + "registered.php";
     $scope.courses = [];
     $ionicLoading.show({
@@ -28,4 +28,11 @@ angular.module('ccrs.controllers.registeredctrl', [])
         return "item item-text-wrap";
       }
     };
-  });
+    $rootScope.$ionicGoBack = function() {
+      $state.go('tab.dash');
+    };
+
+    $scope.$on('$ionicView.afterLeave', function() {
+      $ionicHistory.clearCache();
+    });
+});

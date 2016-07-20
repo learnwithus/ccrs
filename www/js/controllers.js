@@ -11,9 +11,13 @@ angular.module('ccrs.controllers',
   'ccrs.controllers.onlinemoodlectrl',
   'ccrs.controllers.accountctrl'])
 
-.controller('DashCtrl', function($scope, $state) {
+.controller('DashCtrl', function($scope, $state, $ionicHistory) {
   $scope.goToSearch = function() {
     $state.go('tab.courses');
   };
+
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    viewData.enableBack = false;
+  });
 });
 

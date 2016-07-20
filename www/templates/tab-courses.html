@@ -20,7 +20,7 @@
           <h2>{{course.Title}}</h2>
           <p>{{course.Organization}} ({{course.CourseType}})</p>
           <p class="paragraph-course-detail" style="margin-left: 12%;">
-            <a class="btn-detail" href="#/tab/courses/{{course.CourseID}}">
+            <a class="btn-detail" href="#/tab/courses/{{course.CourseID}}" ng-click="setCache()">
               <i class="icon ion-plus-circled icon-accessory"></i> Course Detail
             </a>
           </p>
