@@ -4,6 +4,7 @@ angular.module('ccrs.controllers.sessionsctrl', [])
   var session_url = $rootScope.CCRS_URL + "sessions.php";
   $scope.sessions = [];
   $scope.course = Preferences.getPreference();
+  $scope.empty = false;
   function containsObject(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
@@ -17,13 +18,19 @@ angular.module('ccrs.controllers.sessionsctrl', [])
   $http.get(session_url + '?id=' + $stateParams.CourseID.toString())
     .then(function(response) {
       $scope.sessions = response.data;
+      if ($scope.sessions.length == 0) {
+        $scope.empty = true;
+      }
       $scope.sessions.forEach(function(session) {
         var datetime = session.StartDate.split(" ");
         session.startDate = datetime[0] + " " + datetime[1] + " " + datetime[2];
-        session.fullStartTime = datetime[3].split(":");
-        session.startTime = session.fullStartTime[0] + ":" + session.fullStartTime[1]
-          + session.fullStartTime[3].substring(3);
+
+        var fullStartTime = datetime[3].split(":");
+        session.startTime = fullStartTime[0] + ":" + fullStartTime[1] + fullStartTime[3].substring(3);
+
         session.userEnrolled = containsObject(session.SessionID, Localstorage.getObject('user_courses'));
+
+        session.isFull = (session.NumEnrolled >= session.MaxCapacity);
       });
       $state.go($state.current, {}, {reload: false});
     }, function(response) {
@@ -64,15 +71,15 @@ angular.module('ccrs.controllers.sessionsctrl', [])
           }
         })
           .then(function(response) {
-            $ionicLoading.hide();
             console.log(response.data);
+            $ionicLoading.hide();
             var list_courses = Localstorage.getObject('user_courses');
             var new_course = {CourseID: Preferences.getPreference.CourseID, SessionID: session.SessionID};
             list_courses.push(new_course);
             Localstorage.setObject('user_courses', list_courses);
             $ionicHistory.clearHistory();
             $ionicHistory.clearCache();
-            $state.go('tab.courses');
+            $state.go('tab.dash');
             $ionicPopup.alert({
               title: 'Successfully Registered',
               template: 'You have successfully registered for the session.'

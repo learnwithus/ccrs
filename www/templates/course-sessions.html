@@ -9,27 +9,35 @@
         <h5 class="sub-heading"><strong>Course Name</strong></h5>
         <p>{{course.Title}}</p>
       </div>
-      <ion-list>
         <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
           <p><strong>Date</strong>: {{session.startDate}}</p>
           <p><strong>Time</strong>: {{session.startTime}}</p>
           <p><strong>Location</strong></p>
           <p>{{session.Location}}</p>
-          <p ng-if="!session.userEnrolled" class="paragraph-session-detail">
+          <p ng-if="!session.userEnrolled && !session.isFull" class="paragraph-session-detail">
             <a class="btn-detail-session" ng-click="showConfirm(session)">
               <i class="icon ion-key icon-accessory"></i> Register for this session
             </a>
           </p>
           <p ng-if="session.userEnrolled">
-            You are enrolled in this session.
+            You are enrolled in this session
           </p>
+          <p ng-if="!session.userEnrolled && session.isFull" class="paragraph-session-detail">
+            <a class="btn-detail-session" style="background: #757575;">
+              <i class="icon ion-key icon-accessory"></i> This session is full
+            </a>
+          </p>
+        </ion-item>
+        <ion-item class="item item-text-wrap">
+          <p ng-if="empty"><span>There are no upcoming sessions for this course</span></p>
         </ion-item>
       </ion-list>
     </div>
-
+  </ion-content>
+  <ion-footer-bar>
     <div class="footer-light">
       <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
       <h6>All Rights Reserved</h6>
     </div>
-  </ion-content>
+  </ion-footer-bar>
 </ion-view>

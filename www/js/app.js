@@ -116,6 +116,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
 
       .state('tab.course-sessions', {
         url: '/courses/{CourseID}/sessions',
+        cache: false,
         views: {
           'tab-courses': {
             templateUrl: 'templates/course-sessions.html',

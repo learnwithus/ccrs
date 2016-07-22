@@ -29,6 +29,9 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
   $http.get(course_url + '?id=' + $stateParams.CourseID.toString())
     .then(function(response) {
       $scope.course = response.data;
+      if ($scope.course.Description === '') {
+        $scope.course.Description = 'No description available';
+      }
       $scope.online = $scope.course.CourseType === "Online Course";
       $state.go($state.current, {}, {reload: false});
     }, function(response) {

@@ -11,9 +11,12 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
         $scope.sessions.forEach(function(session) {
           var datetime = session.StartDate.split(" ");
           session.startDate = datetime[0] + " " + datetime[1] + " " + datetime[2];
-          session.fullStartTime = datetime[3].split(":");
-          session.startTime = session.fullStartTime[0] + ":" + session.fullStartTime[1]
-            + session.fullStartTime[3].substring(3);
+
+          var fullStartTime = datetime[3].split(":");
+          session.startTime = fullStartTime[0] + ":" + fullStartTime[1] + fullStartTime[3].substring(3);
+
+          var fullEndTime = session.EndDate.split(" ")[3].split(":");
+          session.endTime = fullEndTime[0] + ":" + fullEndTime[1] + fullEndTime[3].substring(3);
         });
         $ionicLoading.hide();
         $state.go($state.current, {}, {reload: false});
@@ -28,6 +31,12 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
         return "item item-text-wrap";
       }
     };
+
+    // Always show back button
+    $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+      viewData.enableBack = true;
+    });
+
     $rootScope.$ionicGoBack = function() {
       $state.go('tab.dash');
     };

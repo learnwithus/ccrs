@@ -5,10 +5,10 @@
       <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
         <p>Course Title</p>
         <p><span>{{session.Title}}</span></p>
-        <p>Start Date: <span>{{session.startDate}}</span></p>
+        <p>Course Date: <span>{{session.startDate}}</span></p>
         <p>
-          Time: <span>{{session.startTime}}</span>
-          <a class="btn-detail-session-small" href="#/tab/courses/{{session.CourseId}}" >
+          Time: <span>{{session.startTime}} - {{session.endTime}}</span>
+          <a class="btn-detail-session-small" href="#/tab/courses/{{session.CourseID}}" >
             <strong>COURSE DETAILS</strong>
           </a>
         </p>
