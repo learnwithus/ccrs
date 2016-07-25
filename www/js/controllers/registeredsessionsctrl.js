@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.registeredsessionsctrl', [])
-  .controller('RegisteredSessionsCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope, $ionicHistory) {
+  .controller('RegisteredSessionsCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope, Preferences) {
     var session_url = $rootScope.CCRS_URL + "registered_sessions.php";
     $scope.sessions = [];
     $ionicLoading.show({
@@ -26,9 +26,9 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
       });
     $scope.appliedClass = function(index) {
       if (index % 2 != 0) {
-        return "item item-text-wrap item-blue";
+        return "item item-text-wrap item-blue item-no-padding";
       } else {
-        return "item item-text-wrap";
+        return "item item-text-wrap item-no-padding";
       }
     };
 
@@ -39,5 +39,9 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
 
     $rootScope.$ionicGoBack = function() {
       $state.go('tab.dash');
+    };
+
+    $scope.setPref = function() {
+      Preferences.setPreference('tab.registered-sessions');
     };
 });

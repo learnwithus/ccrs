@@ -2,12 +2,20 @@
   <ion-content class="padding">
     <h3>My Training History</h3>
     <ion-list>
-      <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)" >
+      <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)">
         <p>Course Title</p>
         <p><span>{{course.Title}}</span></p>
         <p>Result: <span>{{course.Grade}}</span></p>
         <p>Completion Date: <span>{{course.CompletedDate}}</span></p>
       </ion-item>
     </ion-list>
+
   </ion-content>
+
+  <ion-footer-bar>
+    <div class="footer-light">
+      <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
+      <h6>All Rights Reserved</h6>
+    </div>
+  </ion-footer-bar>
 </ion-view>

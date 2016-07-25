@@ -28,6 +28,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
   $ionicConfigProvider.tabs.position('bottom');
   $ionicConfigProvider.backButton.previousTitleText(false);
   $ionicConfigProvider.backButton.text('Back');
+  $ionicConfigProvider.navBar.alignTitle('center');
 
   $stateProvider
 

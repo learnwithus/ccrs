@@ -10,17 +10,17 @@
         <p>{{course.Title}}</p>
       </div>
         <ion-item ng-repeat="session in sessions track by $index" ng-class="appliedClass($index)" >
-          <p><strong>Date</strong>: {{session.startDate}}</p>
-          <p><strong>Time</strong>: {{session.startTime}}</p>
+          <p><strong>Date</strong>: <span>{{session.startDate}}</span></p>
+          <p><strong>Time</strong>: <span>{{session.startTime}}</span></p>
           <p><strong>Location</strong></p>
-          <p>{{session.Location}}</p>
+          <p><span>{{session.Location}}</span></p>
           <p ng-if="!session.userEnrolled && !session.isFull" class="paragraph-session-detail">
             <a class="btn-detail-session" ng-click="showConfirm(session)">
               <i class="icon ion-key icon-accessory"></i> Register for this session
             </a>
           </p>
           <p ng-if="session.userEnrolled">
-            You are enrolled in this session
+            <span>You are enrolled in this session</span>
           </p>
           <p ng-if="!session.userEnrolled && session.isFull" class="paragraph-session-detail">
             <a class="btn-detail-session" style="background: #757575;">
@@ -28,7 +28,7 @@
             </a>
           </p>
         </ion-item>
-        <ion-item class="item item-text-wrap">
+        <ion-item ng-if="empty" class="item item-text-wrap">
           <p ng-if="empty"><span>There are no upcoming sessions for this course</span></p>
         </ion-item>
       </ion-list>

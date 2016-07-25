@@ -32,6 +32,7 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
       if ($scope.course.Description === '') {
         $scope.course.Description = 'No description available';
       }
+      $scope.course.Description = $scope.course.Description.replace(/<\/?[^>]+(>|$)/g, "");
       $scope.online = $scope.course.CourseType === "Online Course";
       $state.go($state.current, {}, {reload: false});
     }, function(response) {
@@ -105,6 +106,15 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
   });
 
   $rootScope.$ionicGoBack = function() {
-    $state.go('tab.courses');
+    var pref = Preferences.getPreference();
+    Preferences.setPreference({});
+    if (pref === 'tab.registered') {
+
+      $state.go('tab.registered');
+    } else if (pref === 'tab.registered-sessions') {
+      $state.go('tab.registered-sessions');
+    } else {
+      $state.go('tab.courses');
+    }
   };
 });

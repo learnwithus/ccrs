@@ -9,7 +9,7 @@
         <p>
           <!--Time: <span>{{course.startTime}}</span>-->
           <span>{{course.startDate}}</span>
-          <a class="btn-detail-session-small" href="#/tab/courses/{{course.CourseId}}" >
+          <a class="btn-detail-session-small" href="#/tab/courses/{{course.CourseId}}" ng-click="setPref()">
             <strong>COURSE DETAILS</strong>
           </a>
         </p>
@@ -24,4 +24,10 @@
       </ion-item>
     </ion-list>
   </ion-content>
+  <ion-footer-bar>
+    <div class="footer-light">
+      <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
+      <h6>All Rights Reserved</h6>
+    </div>
+  </ion-footer-bar>
 </ion-view>

@@ -17,9 +17,9 @@ angular.module('ccrs.controllers.trainingctrl', [])
       });
     $scope.appliedClass = function(index) {
       if (index % 2 != 0) {
-        return "item item-text-wrap item-blue";
+        return "item item-text-wrap item-blue item-no-padding";
       } else {
-        return "item item-text-wrap";
+        return "item item-text-wrap item-no-padding";
       }
     };
     $rootScope.$ionicGoBack = function() {
