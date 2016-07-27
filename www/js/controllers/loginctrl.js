@@ -21,6 +21,7 @@ angular.module('ccrs.controllers.loginctrl', [])
           console.log(response);
         });
 
+      /*
       $http.get($rootScope.CCRS_URL + 'usergroup.php?user=' + Localstorage.get('CCRSID'))
         .then(function(response) {
           console.log('Group ID: ' + response.data['GroupID']);
@@ -29,6 +30,7 @@ angular.module('ccrs.controllers.loginctrl', [])
           $ionicLoading.hide();
           console.log(response);
         });
+        */
     };
 
     var getCCRSID = function() {

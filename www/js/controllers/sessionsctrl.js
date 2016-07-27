@@ -66,8 +66,7 @@ angular.module('ccrs.controllers.sessionsctrl', [])
           data: {
             'user': Localstorage.get('CCRSID'),
             'session': session.SessionID,
-            'course': $scope.course.CourseID,
-            'group': Localstorage.get('group')
+            'course': $scope.course.CourseID
           }
         })
           .then(function(response) {
