@@ -1,3 +1,6 @@
+/*
+  main.css contains shared CSS common to multiple templates
+*/
 @font-face {
   font-family: 'Segoe UI semibold';
   src: url('../lib/ionic/fonts/seguisb.ttf') format('truetype');
@@ -30,12 +33,12 @@ h5.sub-heading {
   font-family: "Segoe UI semibold", sans-serif;
 }
 
-ion-nav-bar.bar-stable {
-	margin-bottom: 5px;
+.bar-header {
+  background: #006fa0;
 }
 
-.title.title-center.header-item,
-ion-header-bar .title {
+.title,
+.title.title-center.header-item {
   color: #fff;
   font-family: "Times New Roman", serif;
 }
@@ -67,19 +70,19 @@ ion-content {
   background-color: #006fa0;
 }
 
-label.item-input-wrapper {
+.item-input-wrapper {
 	height: 35px;
 }
 
-label.item-input-wrapper input {
+.item-input-wrapper input {
   font-family: "Segoe UI light", sans-serif;
 }
 
-div.content-item {
+.content-item {
 	padding: 5px 3px 0 3px;
 }
 
-ion-item.item {
+.item {
 	border-right: none;
 	border-left: none;
 	padding-bottom: 10px;
@@ -88,7 +91,7 @@ ion-item.item {
 	overflow: scroll;
 }
 
-ion-item.item.item-blue {
+.item-blue {
 	border-right: none;
 	border-left: none;
 	padding-bottom: 10px;
@@ -97,36 +100,51 @@ ion-item.item.item-blue {
 	overflow: scroll;
 }
 
-.ion-plus-circled.icon-accessory,
-.icon-ion-key.icon-accessory,
-.ion-android-time.icon-accessory {
+.ion-plus-circled,
+.icon-ion-key,
+.ion-android-time {
 	font-size: 25px;
 	margin-right: 10px;
 }
 
-div.content-item-opaque {
+.content-item-opaque {
 	background: rgba(255, 255, 255, 0.5);
 	padding: 10px 5px 3px 5px;
   font-family: "Segoe UI light", sans-serif;
 }
 
-div.content-item-opaque a,
-div.content-item-opaque p {
+.content-item-opaque a,
+.content-item-opaque p {
   font-family: "Segoe UI semibold", sans-serif;
 }
 
-div.content-item-opaque p span {
+.content-item-opaque p span {
   font-family: "Segoe UI light", sans-serif;
 }
 
-div.content-item-blue {
+.content-item-blue {
 	background: rgba(152, 201, 222, 0.6);
 	padding: 10px 5px 10px 5px;
   font-family: "Segoe UI light", sans-serif;
 }
 
-ion-header-bar.bar.bar-header {
-	background: #006fa0;
+.content-item > ion-list > div > ion-item a,
+.content-item > ion-list > div > ion-item h2 {
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+.content-item > ion-list > div > ion-item > p {
+  font-family: "Segoe UI light", sans-serif;
+  color: #000;
+}
+
+.item-text-wrap p {
+  font-family: "Segoe UI semibold", sans-serif;
+  color: #000;
+}
+
+.item-text-wrap p span {
+  font-family: "Segoe UI light", sans-serif;
 }
 
 .btn-detail-small {
@@ -158,36 +176,17 @@ ion-header-bar.bar.bar-header {
   margin: 10px auto;
 }
 
-ion-footer-bar.bar.bar-footer.has-tabs {
+.bar-footer {
   background: #dbf0f8;
   border: 0;
 }
 
-div.content-item > ion-list > div > ion-item a,
-div.content-item > ion-list > div > ion-item h2 {
-  font-family: "Segoe UI semibold", sans-serif;
-}
-
-div.content-item > ion-list > div > ion-item > p {
-  font-family: "Segoe UI light", sans-serif;
-  color: #000;
-}
-
-.item-text-wrap p {
-  font-family: "Segoe UI semibold", sans-serif;
-  color: #000;
-}
-
-.item-text-wrap p span {
-  font-family: "Segoe UI light", sans-serif;
-}
-
-.popup-container.popup-showing.active div.popup {
+.popup-container.popup-showing.active .popup {
 	background-color: #006fa0;
 }
 
 .popup .btn-positive,
-.popup .popup-head h3.popup-title {
+.popup .popup-head .popup-title {
   color: #fff;
 }
 

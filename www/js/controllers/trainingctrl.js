@@ -5,7 +5,7 @@ angular.module('ccrs.controllers.trainingctrl', [])
     $ionicLoading.show({
       template: 'Loading Courses'
     });
-    // $http.get(course_url + "?user=" + Localstorage.getObject('token').userid)
+    
     $http.get(course_url + "?user=" + Localstorage.get('CCRSID'))
       .then(function(response) {
         $scope.courses = response.data;

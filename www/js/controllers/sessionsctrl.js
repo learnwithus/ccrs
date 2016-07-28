@@ -1,6 +1,5 @@
 angular.module('ccrs.controllers.sessionsctrl', [])
 .controller('SessionsCtrl', function($scope, $http, $state, $stateParams, Preferences, $rootScope, Localstorage, $ionicPopup, $ionicLoading, $ionicHistory) {
-  // var course_url = 'http://localhost/sessions.php';
   var session_url = $rootScope.CCRS_URL + "sessions.php";
   $scope.sessions = [];
   $scope.course = Preferences.getPreference();
