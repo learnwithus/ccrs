@@ -5,6 +5,10 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
  * Default Ionic configuration created with the 'ionic startapp' command
  */
 .run(function($ionicPlatform, $rootScope) {
+  document.addEventListener("deviceready", onDeviceReady, false);
+  function onDeviceReady() {
+      window.open = cordova.InAppBrowser.open;
+  }
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

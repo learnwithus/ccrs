@@ -4,7 +4,7 @@ angular.module('ccrs.controllers.onlinemoodlectrl', [])
       + "&password=" + Localstorage.get('password') + "&course_id=" + $stateParams.MoodleID.toString();
     // http://sourcefreeze.com/cordova-inappbrowser-plugin-example-using-ionic-framework/
     if (!$scope.loaded) {
-      window.open($filter('trusted')($scope.login_url), '_self');
+      window.open($filter('trusted')($scope.login_url), '_blank');
     }
     $scope.loaded = true;
   });

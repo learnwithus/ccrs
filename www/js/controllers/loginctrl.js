@@ -15,22 +15,11 @@ angular.module('ccrs.controllers.loginctrl', [])
           Localstorage.setObject('user_courses', response.data);
           console.log("User Courses Successfully Set in Localstorage");
           $ionicLoading.hide();
-          $state.go('tab.courses');
+          $state.go('tab.dash');
         }, function(response) {
           $ionicLoading.hide();
           console.log(response);
         });
-
-      /*
-      $http.get($rootScope.CCRS_URL + 'usergroup.php?user=' + Localstorage.get('CCRSID'))
-        .then(function(response) {
-          console.log('Group ID: ' + response.data['GroupID']);
-          Localstorage.set('group', response.data['GroupID']);
-        }, function(response) {
-          $ionicLoading.hide();
-          console.log(response);
-        });
-        */
     };
 
     var getCCRSID = function() {
@@ -77,7 +66,7 @@ angular.module('ccrs.controllers.loginctrl', [])
             getCCRSID();
             console.log("Moodle ID: " + userId);
           }
-          //failed login
+          // failed login
           else {
             $ionicLoading.hide();
             $ionicPopup.alert({
