@@ -39,7 +39,7 @@ angular.module('ccrs.controllers.registeredctrl', [])
     });
 
     $rootScope.$ionicGoBack = function() {
-      $state.go('tab.dash');
+      $state.go('tab.home');
     };
     
     $scope.$on('$ionicView.afterLeave', function() {

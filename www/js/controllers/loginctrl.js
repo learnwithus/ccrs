@@ -15,7 +15,7 @@ angular.module('ccrs.controllers.loginctrl', [])
           Localstorage.setObject('user_courses', response.data);
           console.log("User Courses Successfully Set in Localstorage");
           $ionicLoading.hide();
-          $state.go('tab.dash');
+          $state.go('tab.home');
         }, function(response) {
           $ionicLoading.hide();
           console.log(response);

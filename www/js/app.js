@@ -1,9 +1,5 @@
 
 angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', 'ccrs.filter', 'ccrs.localStorage'])
-
-/**
- * Default Ionic configuration created with the 'ionic startapp' command
- */
 .run(function($ionicPlatform, $rootScope) {
   document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
@@ -15,7 +11,6 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -26,7 +21,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
 })
 
 /**
- * States (routes) configuration for the app, with a template and controller for each route
+ * States configuration for the app, with a template and controller for each state
  */
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
@@ -49,50 +44,50 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
   })
 
   // Each tab has its own nav history stack:
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        controller: 'HomeCtrl'
       }
     }
   })
     .state('tab.training', {
-      url: '/dash/training',
+      url: '/home/training',
       cache: false,
       views: {
-        'tab-dash': {
+        'tab-home': {
           templateUrl: 'templates/training.html',
           controller: 'TrainingCtrl'
         }
       }
     })
     .state('tab.registered', {
-      url: '/dash/registered',
+      url: '/home/registered',
       cache: false,
       views: {
-        'tab-dash': {
+        'tab-home': {
           templateUrl: 'templates/registered.html',
           controller: 'RegisteredCtrl'
         }
       }
     })
     .state('tab.registered-sessions', {
-      url: '/dash/registered-sessions',
+      url: '/home/registered-sessions',
       cache: false,
       views: {
-        'tab-dash': {
+        'tab-home': {
           templateUrl: 'templates/registered-sessions.html',
           controller: 'RegisteredSessionsCtrl'
         }
       }
     })
     .state('tab.profile', {
-      url: '/dash/profile',
+      url: '/home/profile',
       cache: false,
       views: {
-        'tab-dash': {
+        'tab-home': {
           templateUrl: 'templates/profile.html',
           controller: 'ProfileCtrl'
         }
@@ -132,7 +127,6 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
 
       .state('tab.course-online', {
         url: '/courses/{CourseID}/online',
-
         views: {
           'tab-courses': {
             templateUrl: 'templates/course-online.html',
@@ -142,7 +136,6 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
       })
       .state('tab.course-online-moodle', {
         url: '/courses/{CourseID}/online/{MoodleID}',
-
         views: {
           'tab-courses': {
             templateUrl: 'templates/course-online-moodle.html',
@@ -151,12 +144,12 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
         }
       })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.settings', {
+    url: '/settings',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   });

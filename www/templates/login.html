@@ -4,7 +4,6 @@
       <h1>CCRS</h1>
       <h5>Course Catalogue Registration System</h5>
     </div>
-
     <div id="login-form" class="content-item-opaque">
       <label class="item-input-wrapper login-wrapper">
         <input class="login-input" type="text" placeholder="USERNAME" ng-model="user.username">
@@ -12,23 +11,7 @@
       <label class="item-input-wrapper login-wrapper">
         <input class="login-input" type="password" placeholder="PASSWORD" ng-model="user.password">
       </label>
-      <a id="login-btn" class="btn-detail-large" ng-click="login()">SIGN IN</a>
+      <a id="login-btn" ng-click="login()">SIGN IN</a>
     </div>
-
-    <!--
-    <form id="login-form" class="content-item-opaque" ng-submit="login()">
-      <div class="item">
-        <label class="item-input-wrapper">
-          <input type="text" ng-model="course_title" placeholder="USERNAME">
-        </label>
-        <label class="item-input-wrapper">
-          <input type="text" ng-model="course_title" placeholder="PASSWORD">
-        </label>
-        <button type="submit" class="button">
-          SIGN IN
-        </button>
-      </div>
-    </form>
-    -->
   </ion-content>
 </ion-view>

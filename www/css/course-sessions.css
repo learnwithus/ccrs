@@ -1,0 +1,22 @@
+.paragraph-session-detail {
+  display: table;
+  width: 75%;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.btn-detail-session {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 16px;
+  background: #006fa0;
+  text-decoration: none;
+  width: 40px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 5px 0 5px 0;
+  font-family: "Segoe UI semibold", sans-serif;
+}

@@ -1,5 +1,5 @@
-angular.module('ccrs.controllers.accountctrl', [])
-.controller('AccountCtrl', function($scope, $rootScope, $state, Localstorage, $filter) {
+angular.module('ccrs.controllers.settingsctrl', [])
+.controller('SettingsCtrl', function($scope,  $state, Localstorage, $filter) {
   $scope.logout = function() {
     Localstorage.remove("username");
     Localstorage.remove("password");

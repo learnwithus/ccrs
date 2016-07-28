@@ -78,7 +78,7 @@ angular.module('ccrs.controllers.sessionsctrl', [])
             Localstorage.setObject('user_courses', list_courses);
             $ionicHistory.clearHistory();
             $ionicHistory.clearCache();
-            $state.go('tab.dash');
+            $state.go('tab.home');
             $ionicPopup.alert({
               title: 'Successfully Registered',
               template: 'You have successfully registered for the session.'

@@ -1,5 +1,6 @@
 angular.module('ccrs.controllers',
   ['ccrs.controllers.loginctrl',
+  'ccrs.controllers.homectrl',
   'ccrs.controllers.trainingctrl',
   'ccrs.controllers.registeredctrl',
   'ccrs.controllers.registeredsessionsctrl',
@@ -9,15 +10,5 @@ angular.module('ccrs.controllers',
   'ccrs.controllers.sessionsctrl',
   'ccrs.controllers.onlinectrl',
   'ccrs.controllers.onlinemoodlectrl',
-  'ccrs.controllers.accountctrl'])
-
-.controller('DashCtrl', function($scope, $state, $ionicHistory) {
-  $scope.goToSearch = function() {
-    $state.go('tab.courses');
-  };
-
-  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
-    viewData.enableBack = false;
-  });
-});
+  'ccrs.controllers.settingsctrl']);
 

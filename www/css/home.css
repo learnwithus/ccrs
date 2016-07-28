@@ -1,0 +1,40 @@
+#img-logo {
+  position: absolute;
+  max-width: 50%;
+  left: 25%;
+  bottom: 50px;
+}
+
+.ion-ios-bookmarks-outline,
+.ion-ios-paper-outline,
+.ion-person,
+.ion-laptop {
+  float: left;
+  font-size: 32px;
+}
+
+.btn-detail-large {
+  position: relative;
+  margin: 16px auto;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 20px;
+  background: #006fa0;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  width: 280px;
+  text-align: center;
+  display: block;
+  height: 50px;
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+.btn-detail-large p {
+  margin-top: 5px;
+}
+
+.tab-title {
+  font-family: "Segoe UI semibold", sans-serif;
+}

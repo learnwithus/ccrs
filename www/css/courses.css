@@ -1,0 +1,101 @@
+.ion-gear-b {
+  position: absolute;
+  font-size: 26px;
+  color: #006fa0;
+  top: 5px;
+  right: 10px;
+}
+
+.item-input-inset {
+  border: none;
+  background: transparent;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.ion-android-search {
+  color: #fff;
+}
+
+.button-small {
+  background-color: #006fa0;
+  border-radius: 0;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+}
+
+ion-item.modal-list-item {
+  background: transparent;
+  border: none;
+}
+
+.paragraph-course-detail {
+  display: table;
+  width: 75%;
+  padding: 0;
+  margin-left: 10%;
+  margin-bottom: 5px;
+}
+
+.btn-detail {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 20px;
+  background: #006fa0;
+  text-decoration: none;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+  display:table-cell;
+  padding: 5px 0 7px 0;
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.modal-content {
+  padding: 10px 5px 20px 5px;
+  background-color: #00374B;
+}
+
+.modal-content .text-white,
+.modal-content .item-checkbox {
+  font-family: "Segoe UI semibold", sans-serif;
+}
+
+.close-modal {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  float: right;
+  top: -5px;
+  right: 10px;
+  z-index: 3;
+}
+
+.close-modal .lr {
+  height: 30px;
+  width: 1px;
+  margin-left: 15px;
+  background-color: white;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  z-index: 4;
+}
+
+.close-modal .lr .rl {
+  height: 30px;
+  width: 1px;
+  background-color: white;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  z-index: 5;
+}

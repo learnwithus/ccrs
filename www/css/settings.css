@@ -1,0 +1,6 @@
+ion-content ion-list > div > ion-item .paragraph-settings {
+  font-size: 18px;
+  color: #333;
+  font-family: "Segoe UI semibold", sans-serif;
+  margin: 3px 0 5px 0;
+}

@@ -23,6 +23,6 @@ angular.module('ccrs.controllers.trainingctrl', [])
       }
     };
     $rootScope.$ionicGoBack = function() {
-      $state.go('tab.dash');
+      $state.go('tab.home');
     };
 });

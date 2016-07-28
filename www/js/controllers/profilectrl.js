@@ -6,7 +6,6 @@ angular.module('ccrs.controllers.profilectrl', [])
     $ionicLoading.show({
       template: 'Loading Profile'
     });
-    // $http.get(course_url + "?user=" + Localstorage.getObject('token').userid)
     $http.get(course_url + "?id=" + Localstorage.get('CCRSID'))
       .then(function(response) {
         $scope.data = response.data;
@@ -22,6 +21,6 @@ angular.module('ccrs.controllers.profilectrl', [])
       $scope.password += '*';
     }
     $rootScope.$ionicGoBack = function() {
-      $state.go('tab.dash');
+      $state.go('tab.home');
     };
   });
