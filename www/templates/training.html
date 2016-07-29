@@ -1,6 +1,7 @@
 <ion-view view-title="CCRS">
   <ion-content class="padding">
     <h3>My Training History</h3>
+    <p><span>Completion certificates are not available through the CCRS app. Please visit the <a ng-click="ccrs()">CCRS</a> website to view and download your certificates</span></p>
     <ion-list>
       <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)">
         <p>Course Title</p>

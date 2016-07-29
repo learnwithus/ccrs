@@ -8,7 +8,8 @@
 .ion-ios-bookmarks-outline,
 .ion-ios-paper-outline,
 .ion-person,
-.ion-laptop {
+.ion-laptop,
+.ion-search {
   float: left;
   font-size: 32px;
 }

@@ -25,7 +25,7 @@
   padding: 0;
 }
 
-ion-item.modal-list-item {
+.modal-list-item {
   background: transparent;
   border: none;
 }
@@ -64,8 +64,12 @@ ion-item.modal-list-item {
 }
 
 .modal-content .text-white,
-.modal-content .item-checkbox {
+.item-checkbox {
   font-family: "Segoe UI semibold", sans-serif;
+}
+
+.item-checkbox {
+  background-color: #fff;
 }
 
 .close-modal {

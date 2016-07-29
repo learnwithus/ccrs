@@ -1,11 +1,11 @@
 angular.module('ccrs.controllers.trainingctrl', [])
-  .controller('TrainingCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope) {
+  .controller('TrainingCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope, $filter) {
     var course_url = $rootScope.CCRS_URL + "training.php";
     $scope.courses = [];
     $ionicLoading.show({
       template: 'Loading Courses'
     });
-    
+
     $http.get(course_url + "?user=" + Localstorage.get('CCRSID'))
       .then(function(response) {
         $scope.courses = response.data;
@@ -24,5 +24,8 @@ angular.module('ccrs.controllers.trainingctrl', [])
     };
     $rootScope.$ionicGoBack = function() {
       $state.go('tab.home');
+    };
+    $scope.ccrs = function() {
+      window.open($filter('trusted')("https://ccrs.vch.ca/"),'_system');
     };
 });

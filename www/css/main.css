@@ -1,5 +1,6 @@
 /*
-  main.css contains shared CSS common to multiple templates
+  main.css contains shared CSS common to multiple templates.
+  All other CSS files have CSS specific to their respective templates.
 */
 @font-face {
   font-family: 'Segoe UI semibold';
@@ -31,6 +32,16 @@ h3.sub-title {
 h5.sub-heading {
   text-align: left;
   font-family: "Segoe UI semibold", sans-serif;
+}
+
+p span {
+  font-family: "Segoe UI light", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+  font-family: "Segoe UI light", sans-serif;
+  padding: 0 30px 0 30px;
 }
 
 .bar-header {
