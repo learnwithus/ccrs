@@ -40,7 +40,7 @@ angular.module('ccrs.controllers.loginctrl', [])
     };
 
     $scope.login = function () {
-      var token_url = "https://learndev.vch.ca/m2/local/take5service/logging_in.php";
+      var token_url = "https://learn.vch.ca/m2/local/take5service/logging_in.php";
       $ionicLoading.show({
         template: 'Signing in'
       });

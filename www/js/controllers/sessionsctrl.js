@@ -69,7 +69,6 @@ angular.module('ccrs.controllers.sessionsctrl', [])
           }
         })
           .then(function(response) {
-            console.log(response.data);
             $ionicLoading.hide();
             var list_courses = Localstorage.getObject('user_courses');
             var new_course = {CourseID: Preferences.getPreference.CourseID, SessionID: session.SessionID};

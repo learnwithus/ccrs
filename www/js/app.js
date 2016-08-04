@@ -17,7 +17,7 @@ angular.module('ccrs', ['ionic', 'ccrs.controllers', 'ccrs.preferenceService', '
       StatusBar.styleDefault();
     }
   });
-  $rootScope.CCRS_URL = "https://learndev.vch.ca/m2/vch_custom/ccrsapp/";
+  $rootScope.CCRS_URL = "https://learn.vch.ca/m2/vch_custom/ccrsapp/";
 })
 
 /**

@@ -5,9 +5,9 @@
       <ion-item ng-repeat="course in courses track by $index" ng-class="appliedClass($index)" >
         <p>Course Title</p>
         <p><span>{{course.Title}}</span></p>
-        <p>Date Registered</p>
+        <p>Registration Duration</p>
         <p>
-          <span>{{course.startDate}}</span>
+          <span>{{course.CourseDateTime}}</span>
           <a class="btn-detail-session-small" href="#/tab/courses/{{course.CourseId}}" ng-click="setPref()">
             <strong>COURSE DETAILS</strong>
           </a>

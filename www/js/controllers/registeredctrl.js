@@ -8,16 +8,11 @@ angular.module('ccrs.controllers.registeredctrl', [])
     $http.get(course_url + "?user=" + Localstorage.get('CCRSID'))
       .then(function(response) {
         $scope.courses = response.data;
-        $scope.courses.forEach(function(session) {
-          if (session.CourseType == 0) {
-            var idx = $scope.courses.indexOf(session);
+        $scope.courses.forEach(function(course) {
+          if (course.CourseType == 0) {
+            var idx = $scope.courses.indexOf(course);
             $scope.courses.splice(idx, 1);
           }
-          var datetime = session.StartDate.split(" ");
-          session.startDate = datetime[0] + " " + datetime[1] + " " + datetime[2];
-          session.fullStartTime = datetime[3].split(":");
-          session.startTime = session.fullStartTime[0] + ":" + session.fullStartTime[1]
-            + session.fullStartTime[3].substring(3);
         });
         $ionicLoading.hide();
         $state.go($state.current, {}, {reload: false});
@@ -41,7 +36,7 @@ angular.module('ccrs.controllers.registeredctrl', [])
     $rootScope.$ionicGoBack = function() {
       $state.go('tab.home');
     };
-    
+
     $scope.$on('$ionicView.afterLeave', function() {
       $ionicHistory.clearCache();
     });

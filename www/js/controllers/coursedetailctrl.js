@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.coursedetailctrl', [])
-.controller('CourseDetailCtrl', function($scope, $http, $state, $stateParams, Preferences, $ionicPopup, $rootScope, Localstorage, $ionicLoading, $ionicHistory) {
+.controller('CourseDetailCtrl', function($scope, $http, $state, $stateParams, Preferences, $ionicPopup, $rootScope, Localstorage, $ionicLoading) {
   $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
   var course_url = $rootScope.CCRS_URL + "course.php";
   $scope.course = {};
@@ -26,6 +26,9 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
   */
   $scope.userEnrolled = containsObject($stateParams.CourseID.toString(), Localstorage.getObject('user_courses'));
 
+  $ionicLoading.show({
+    template: 'Fetching Course Information'
+  });
   $http.get(course_url + '?id=' + $stateParams.CourseID.toString())
     .then(function(response) {
       $scope.course = response.data;
@@ -34,6 +37,8 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
       }
       $scope.course.Description = $scope.course.Description.replace(/<\/?[^>]+(>|$)/g, "");
       $scope.online = $scope.course.CourseType === "Online Course";
+      $scope.registrationRequired = $scope.course.Registration == 1;
+      $ionicLoading.hide();
       $state.go($state.current, {}, {reload: false});
     }, function(response) {
       console.log(response);
@@ -85,6 +90,7 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
         })
           .then(function(response) {
             $ionicLoading.hide();
+            console.log(response.data);
             var list_courses = Localstorage.getObject('user_courses');
             var new_course = {CourseID: $scope.course.CourseID, SessionID: 0};
             list_courses.push(new_course);

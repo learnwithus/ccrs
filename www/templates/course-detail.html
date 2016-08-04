@@ -20,11 +20,11 @@
       <i class="icon ion-android-time icon-accessory"></i> View Sessions
     </a>
 
-    <a class="btn-detail-small" ng-if="online && !userEnrolled" ng-click="showConfirm()">
+    <a class="btn-detail-small" ng-if="online && !userEnrolled && registrationRequired" ng-click="showConfirm()">
       <i class="icon ion-key icon-accessory"></i> Enrol in this course
     </a>
 
-    <a class="btn-detail-small" ng-if="online && userEnrolled" ng-click="startOnlineCourse()">
+    <a class="btn-detail-small" ng-if="online && (!registrationRequired || userEnrolled)" ng-click="startOnlineCourse()">
       <i class="icon ion-key icon-accessory"></i> Start Course
     </a>
     <p class="text-center" ng-if="online && userEnrolled">Warning: some online courses are not optimized for mobile display</p>
