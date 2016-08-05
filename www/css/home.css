@@ -2,7 +2,7 @@
   position: absolute;
   max-width: 50%;
   left: 25%;
-  bottom: 50px;
+  bottom: 30px;
 }
 
 .ion-ios-bookmarks-outline,
@@ -30,6 +30,14 @@
   display: block;
   height: 50px;
   font-family: "Segoe UI semibold", sans-serif;
+}
+
+#btn-search-course {
+  margin-top: 0;
+}
+
+#btn-profile {
+  margin-bottom: 7px;
 }
 
 .btn-detail-large p {
