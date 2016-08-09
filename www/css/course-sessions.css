@@ -20,3 +20,7 @@
   padding: 5px 0 5px 0;
   font-family: "Segoe UI semibold", sans-serif;
 }
+
+.btn-disabled {
+  background: #757575;
+}

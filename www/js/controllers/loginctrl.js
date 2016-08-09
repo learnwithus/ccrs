@@ -10,7 +10,7 @@ angular.module('ccrs.controllers.loginctrl', [])
       $ionicLoading.show({
         template: 'Initializing your profile'
       });
-      $http.get($rootScope.CCRS_URL + 'registered_id.php?user=' + Localstorage.get('CCRSID'))
+      $http.get($rootScope.CCRS_URL + 'registered_sessions.php?user=' + Localstorage.get('CCRSID'))
         .then(function(response) {
           Localstorage.setObject('user_courses', response.data);
           console.log("User Courses Successfully Set in Localstorage");

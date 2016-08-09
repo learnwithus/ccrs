@@ -4,6 +4,7 @@ angular.module('ccrs.controllers.sessionsctrl', [])
   $scope.sessions = [];
   $scope.course = Preferences.getPreference();
   $scope.empty = false;
+
   function containsObject(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
@@ -14,7 +15,20 @@ angular.module('ccrs.controllers.sessionsctrl', [])
     return false;
   }
 
-  $http.get(session_url + '?id=' + $stateParams.CourseID.toString())
+  $ionicLoading.show({
+    template: 'Retrieving available sessions'
+  });
+  $http.get($rootScope.CCRS_URL + 'registered_sessions.php?user=' + Localstorage.get('CCRSID'))
+    .then(function(response) {
+      Localstorage.setObject('user_courses', response.data);
+      getSessions();
+    }, function(response) {
+      $ionicLoading.hide();
+      console.log(response);
+    });
+
+  var getSessions = function() {
+    $http.get(session_url + '?id=' + $stateParams.CourseID.toString())
     .then(function(response) {
       $scope.sessions = response.data;
       if ($scope.sessions.length == 0) {
@@ -31,10 +45,14 @@ angular.module('ccrs.controllers.sessionsctrl', [])
 
         session.isFull = (session.NumEnrolled >= session.MaxCapacity);
       });
+      $ionicLoading.hide();
       $state.go($state.current, {}, {reload: false});
     }, function(response) {
+      $ionicLoading.hide();
       console.log(response);
     });
+  };
+
   $scope.appliedClass = function(index) {
     if (index % 2 != 0) {
       return "item item-text-wrap item-blue";

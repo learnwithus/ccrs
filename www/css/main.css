@@ -38,6 +38,11 @@ p span {
   font-family: "Segoe UI light", sans-serif;
 }
 
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+  color: #006fa0;
+}
+
 .text-center {
   text-align: center;
   font-family: "Segoe UI light", sans-serif;

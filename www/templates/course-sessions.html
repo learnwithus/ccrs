@@ -19,11 +19,13 @@
               <i class="icon ion-key icon-accessory"></i> Register for this session
             </a>
           </p>
-          <p ng-if="session.userEnrolled">
-            <span>You are enrolled in this session</span>
+          <p ng-if="session.userEnrolled" class="paragraph-session-detail">
+            <a class="btn-detail-session btn-disabled">
+              <i class="icon ion-key icon-accessory"></i> Enrolled in this session
+            </a>
           </p>
           <p ng-if="!session.userEnrolled && session.isFull" class="paragraph-session-detail">
-            <a class="btn-detail-session" style="background: #757575;">
+            <a class="btn-detail-session btn-disabled">
               <i class="icon ion-key icon-accessory"></i> This session is full
             </a>
           </p>
