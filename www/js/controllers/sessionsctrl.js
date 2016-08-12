@@ -75,7 +75,9 @@ angular.module('ccrs.controllers.sessionsctrl', [])
       if(res) {
         Preferences.setPreference($scope.course);
         var req_url = $rootScope.CCRS_URL + "register_student.php";
-        $ionicLoading.show();
+        $ionicLoading.show({
+          template: 'Registering'
+        });
 
         $http({
           method: "POST",
@@ -97,7 +99,8 @@ angular.module('ccrs.controllers.sessionsctrl', [])
             $state.go('tab.home');
             $ionicPopup.alert({
               title: 'Successfully Registered',
-              template: 'You have successfully registered for the session.'
+              template: 'You have successfully registered for the session.',
+              okType: 'btn-default'
             });
           }).then($ionicLoading.hide());
 

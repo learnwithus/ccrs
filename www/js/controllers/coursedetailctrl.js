@@ -17,13 +17,6 @@ angular.module('ccrs.controllers.coursedetailctrl', [])
     return false;
   }
 
-  /*
-  if (containsObject($stateParams.CourseID.toString(), Localstorage.getObject('user_courses'))) {
-    $scope.userEnrolled = true;
-  } else {
-    $scope.userEnrolled = false;
-  }
-  */
   $scope.userEnrolled = containsObject($stateParams.CourseID.toString(), Localstorage.getObject('user_courses'));
 
   $ionicLoading.show({

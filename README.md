@@ -1,7 +1,7 @@
 ### CCRS Mobile Application ###
 
 Mobile application for the BC Health Authorities [Course Catalogue and Registration System](https://ccrs.vch.ca/), developed with the [Ionic](http://ionicframework.com/) framework.
-Employees with existing CCRS accounts can search and register for classroom sessions, start online courses, and check their profile information, training history, or registered sessions.
+Employees with existing CCRS accounts can login to search and register for classroom sessions, start online courses, and check their profile information, training history, or registered sessions.
 
 ##### Ionic Installation (Linux/OS X) #####
 Follow the [Ionic Installation Guide](http://ionicframework.com/docs/guide/installation.html)
@@ -15,6 +15,7 @@ Follow the [Ionic Installation Guide](http://ionicframework.com/docs/guide/insta
 git clone https://github.com/ajhpark/ccrs.git
 cd ccrs
 ionic state restore
+ionic resources
 ```
 
 ##### Configure and Build for Platforms #####
@@ -25,7 +26,7 @@ ionic build android
 ionic run android
 ```
 
-If you have a Mac with Xcode installed, you can also run:
+If you have a Mac with Xcode installed, you can also:
 ```
 ionic platform add ios
 ionic build ios
@@ -36,4 +37,3 @@ Load the platforms/ios directory on Xcode and run the app
 ```
 ionic serve
 ```
-
