@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.profilectrl', [])
-  .controller('ProfileCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope) {
+  .controller('ProfileCtrl', function($scope, $http, $state, Localstorage, $ionicPopup, $ionicLoading, $rootScope, $filter) {
     var course_url = $rootScope.CCRS_URL + "profile.php";
     $scope.data = {};
 
@@ -22,5 +22,8 @@ angular.module('ccrs.controllers.profilectrl', [])
     }
     $rootScope.$ionicGoBack = function() {
       $state.go('tab.home');
+    };
+    $scope.ccrs = function() {
+      window.open($filter('trusted')("https://ccrs.vch.ca/"),'_system');
     };
   });

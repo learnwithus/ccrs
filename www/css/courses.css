@@ -1,6 +1,6 @@
 .ion-gear-b {
   position: absolute;
-  font-size: 26px;
+  font-size: 32px;
   color: #006fa0;
   top: 5px;
   right: 10px;
@@ -15,6 +15,10 @@
 
 .ion-android-search {
   color: #fff;
+}
+
+.close-modal > .ion-android-search {
+  font-size: 32px;
 }
 
 .button-small {
@@ -78,28 +82,7 @@
   height: 30px;
   cursor: pointer;
   float: right;
-  top: -5px;
+  top: 0;
   right: 10px;
   z-index: 3;
-}
-
-.close-modal .lr {
-  height: 30px;
-  width: 1px;
-  margin-left: 15px;
-  background-color: white;
-  transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  z-index: 4;
-}
-
-.close-modal .lr .rl {
-  height: 30px;
-  width: 1px;
-  background-color: white;
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  z-index: 5;
 }

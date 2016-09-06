@@ -4,6 +4,7 @@ angular.module('ccrs.controllers.coursesctrl', [])
   $scope.date;
   $scope.clear = true;
 
+
   $scope.setCache = function() {
     $scope.clear = false;
   };
@@ -78,6 +79,7 @@ angular.module('ccrs.controllers.coursesctrl', [])
   };
   $scope.closeModal = function() {
     $scope.modal.hide();
+    $scope.findCourses(document.getElementById("input_title").value);
   };
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
@@ -88,7 +90,7 @@ angular.module('ccrs.controllers.coursesctrl', [])
     viewData.enableBack = false;
     $scope.clear = true;
   });
-  
+
   $scope.$on('$ionicView.afterLeave', function() {
     if ($scope.clear) {
       $ionicHistory.clearCache();

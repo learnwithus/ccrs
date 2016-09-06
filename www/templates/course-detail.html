@@ -24,11 +24,12 @@
       <i class="icon ion-key icon-accessory"></i> Enrol in this course
     </a>
 
-    <a class="btn-detail-small" ng-if="online && (!registrationRequired || userEnrolled)" ng-click="startOnlineCourse()">
-      <i class="icon ion-key icon-accessory"></i> Start Course
-    </a>
-    <p class="text-center" ng-if="online && userEnrolled">Warning: some online courses are not optimized for mobile display</p>
-
+    <div ng-if="online && (!registrationRequired || userEnrolled)">
+     <a class="btn-detail-small" ng-click="startOnlineCourse()">
+       <i class="icon ion-key icon-accessory"></i> Start Course
+     </a>
+     <p class="text-center">Some online courses are not configured for display on mobile devices. Please use a desktop or laptop computer for the best display options</p>
+    </div>
     <div class="footer-light">
       <h6>CCRS, Copyright Vancouver Coastal Health Authority</h6>
       <h6>All Rights Reserved</h6>
