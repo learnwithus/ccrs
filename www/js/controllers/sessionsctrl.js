@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.sessionsctrl', [])
-.controller('SessionsCtrl', function($scope, $http, $state, $stateParams, Preferences, $rootScope, Localstorage, $ionicPopup, $ionicLoading, $ionicHistory) {
+.controller('SessionsCtrl', function($scope, $http, $state, $stateParams, Preferences, $rootScope, Localstorage, $ionicPopup, $ionicLoading, $ionicHistory, $timeout) {
   var session_url = $rootScope.CCRS_URL + "sessions.php";
   $scope.sessions = [];
   $scope.course = Preferences.getPreference();
@@ -89,23 +89,39 @@ angular.module('ccrs.controllers.sessionsctrl', [])
           }
         })
           .then(function(response) {
-            $ionicLoading.hide();
-            var list_courses = Localstorage.getObject('user_courses');
-            var new_course = {CourseID: Preferences.getPreference.CourseID, SessionID: session.SessionID};
-            list_courses.push(new_course);
-            Localstorage.setObject('user_courses', list_courses);
             $ionicHistory.clearHistory();
             $ionicHistory.clearCache();
-            $state.go('tab.home');
-            $ionicPopup.alert({
-              title: 'Successfully Registered',
-              template: 'You have successfully registered for the session.',
-              okType: 'btn-default'
-            });
+            var registered_session_url = $rootScope.CCRS_URL + "registered_sessions.php";
+            $http.get(registered_session_url + "?user=" + Localstorage.get('CCRSID'))
+              .then(function(response) {
+                var sessions = response.data;
+                if (containsObject(session.SessionID, sessions)) {
+                  $ionicLoading.hide();
+                  $state.go('tab.home');
+                  $ionicPopup.alert({
+                    title: 'Successfully Registered',
+                    template: 'You have successfully registered for the session',
+                    okType: 'btn-default'
+                  });
+                } else {
+                  $ionicLoading.hide();
+                  $state.go('tab.home');
+                  $ionicPopup.alert({
+                    title: 'Registration Failed',
+                    template: 'Failed registration. You may not be eligible for the session. Please check your account type and try again',
+                    okType: 'btn-default'
+                  });
+                }
+              }, function(response) {
+                $ionicLoading.hide();
+                $ionicPopup.alert({
+                  title: 'Registration Failed',
+                  template: 'Registration failed due to a server error. Please try again soon',
+                  okType: 'btn-default'
+                });
+              });
           }).then($ionicLoading.hide());
 
-      } else {
-        console.log('You are not enrolled');
       }
     });
   };

@@ -54,22 +54,24 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
       });
 
       confirmPopup.then(function(res) {
-        /*
         if(res) {
           var req_url = $rootScope.CCRS_URL + "cancel_session.php";
-          $ionicLoading.show();
+          $ionicLoading.show({
+            template: 'Processing request'
+          });
 
           $http({
             method: "POST",
             url: req_url,
             data: {
               'user': Localstorage.get('CCRSID'),
+              'register': session.RegisterID,
+              'course': session.CourseID,
               'session': session.SessionID
             }
           })
             .then(function(response) {
               $ionicLoading.hide();
-              console.log(response.data);
               var list_courses = Localstorage.getObject('user_courses');
               for (var i = 0; i < list_courses.length; i++) {
                 if (list_courses[i]['SessionID'] == session.SessionID) {
@@ -82,13 +84,9 @@ angular.module('ccrs.controllers.registeredsessionsctrl', [])
                 template: 'You have successfully cancelled your registration for the session.',
                 okType: 'btn-default'
               });
-              $state.go($state.current);
+              $state.go('tab.home');
             }).then($ionicLoading.hide());
-        } else {
-          console.log('You are not enrolled');
         }
-        */
-        console.log(session);
       });
     };
 });
