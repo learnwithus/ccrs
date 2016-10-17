@@ -22,6 +22,7 @@ angular.module('ccrs.controllers.coursesctrl', [])
     ]};
 
   $scope.findCourses = function(title) {
+    if (title == "") return;
     $ionicLoading.show();
     var courses_url = $rootScope.CCRS_URL + "courses.php";
     courses_url += '?';
