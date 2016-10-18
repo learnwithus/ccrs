@@ -38,3 +38,18 @@
   padding: 15px 10px 10px 10px;
   font-family: "Segoe UI semibold", sans-serif;
 }
+
+.modal-content.privacy-content{
+  padding: 20px 20px 20px 20px;
+  background-color: #00374B;
+}
+
+.privacy-content p {
+  color: #fff;
+}
+
+.close-privacy {
+  position: absolute;
+  right: 0;
+  margin-bottom: 50px;
+}

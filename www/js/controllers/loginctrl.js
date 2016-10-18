@@ -1,5 +1,5 @@
 angular.module('ccrs.controllers.loginctrl', [])
-  .controller('LoginCtrl', function($http, $scope, $state, Localstorage, $templateCache, $ionicPopup, $ionicLoading, $rootScope) {
+  .controller('LoginCtrl', function($http, $scope, $state, Localstorage, $templateCache, $ionicPopup, $ionicLoading, $rootScope, $ionicModal) {
     $scope.user = {};
 
     if (Localstorage.getObject('token') && Localstorage.get("username") && Localstorage.get("password")) {
@@ -76,4 +76,24 @@ angular.module('ccrs.controllers.loginctrl', [])
           }
         });
     };
+
+    $ionicModal.fromTemplateUrl('templates/privacy-agreement.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (modal) {
+      $scope.modal = modal;
+      if (!Localstorage.get('privacy')) {
+        $scope.modal.show();
+      }
+    });
+    $scope.openModal = function () {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function () {
+      $scope.modal.hide();
+      Localstorage.set('privacy', true);
+    };
+    $scope.$on('$destroy', function () {
+      $scope.modal.remove();
+    });
   });
